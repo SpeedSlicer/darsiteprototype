@@ -1,15 +1,48 @@
 ---
 import "@/styles/global.css"
+import "@fontsource-variable/geist"
+import { ClientRouter } from "astro:transitions"
+import { slide } from "astro:transitions"
+import Navbar from "@/components/navigation/Navbar.astro"
+interface Props {
+  title?: string
+  description?: string
+}
+const {
+  title = "Build something bigger.",
+  description = "Build robots, learn together, and find your people at Downingtown Area Robotics.",
+} = Astro.props
 ---
 
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
-  </head>
+  <head
+    ><ClientRouter /><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width"
+    /><meta name="description" content={description} /><link
+      rel="icon"
+      type="image/png"
+      href="/dar-logo.png"
+    /><title>{title} | Downingtown Area Robotics</title></head
+  >
   <body>
-    <slot />
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <Navbar /><main
+        id="main"
+        transition:name="page"
+        transition:animate={slide({ duration: "380ms" })}
+      >
+        <slot />
+      </main>
+      <footer>
+        <a class="footer-brand" href="/">DAR</a><p>
+
+        </p><a class="text-link" href="mailto:info@darobotics.org"
+          >Say hello <span aria-hidden="true">↗</span></a
+        >
+      </footer>
+    </div>
   </body>
 </html>

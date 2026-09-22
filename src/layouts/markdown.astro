@@ -1,0 +1,20 @@
+---
+import Interest from "@/components/programs/Interest.astro"
+import Layout from "./main.astro"
+interface Props {
+  frontmatter: { title: string; description?: string; eyebrow?: string }
+}
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <header class="page-heading">
+    <p class="eyebrow">
+      {frontmatter.eyebrow ?? "DOWNINGTOWN AREA ROBOTICS"}
+    </p><h1>{frontmatter.title}</h1>{
+      frontmatter.description && <p>{frontmatter.description}</p>
+    }
+  </header>
+  <article class="prose"><slot /></article>
+  <Interest />
+</Layout>

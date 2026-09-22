@@ -1,0 +1,133 @@
+---
+import type { MarkdownInstance } from "astro"
+interface Program {
+  order: number
+  id: string
+  tab: string
+  title: string
+  tagline: string
+  grades: string
+  ages: string
+  schedule: string
+  firstUrl: string
+  photo: string
+  photoAlt: string
+}
+const files = import.meta.glob<MarkdownInstance<Program>>(
+  "../../content/programs/*.md",
+  { eager: true }
+)
+const programs = Object.values(files).sort(
+  (a, b) => a.frontmatter.order - b.frontmatter.order
+)
+---
+
+<section class="program-section" aria-labelledby="program-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">OUR PROGRAMS</p><h2 id="program-title">
+        Meet the teams.
+      </h2>
+      <p class="program-hint">Explore our programs below ↓</p>
+    </div>
+  </div>
+  <program-preview>
+    <div class="preview-tabs" hidden aria-label="DAR programs">
+      {
+        programs.map(({ frontmatter: p }) => (
+          <button
+            type="button"
+            id={`tab-${p.id}`}
+            data-program={p.id}
+            aria-controls={p.id}
+          >
+            {p.tab}
+            <span>{p.grades}</span>
+          </button>
+        ))
+      }
+    </div>
+    {
+      programs.map(({ frontmatter: p, Content }) => (
+        <section
+          class="preview-panel"
+          id={p.id}
+          aria-labelledby={`title-${p.id}`}
+        >
+          <div class="preview-main">
+            <>
+              <p class="eyebrow">{p.tagline}</p>
+              <h3 id={`title-${p.id}`}>{p.title}</h3>
+            </>
+            <div class="program-photo">
+              {p.photo ? (
+                <img
+                  src={p.photo}
+                  alt={p.photoAlt}
+                  width="1000"
+                  height="667"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="photo-placeholder">
+                  <span aria-hidden="true">▧</span>
+                  <p>{p.tab}</p>
+                  <small>Team photo coming soon</small>
+                </div>
+              )}
+            </div>
+            <div class="program-description">
+              <Content />
+            </div>
+            <a
+              class="text-link"
+              href={p.firstUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore this program at FIRST{" "}
+              <>
+                <span aria-hidden="true">↗</span>
+                <span class="sr-only"> (opens in a new tab)</span>
+              </>
+            </a>
+          </div>
+          <aside class="program-facts" aria-label={`${p.tab} at a glance`}>
+            <>
+              <p class="eyebrow">OVERVIEW</p>
+              <dl>
+                <>
+                  <div>
+                    <>
+                      <dt>Who’s it for?</dt>
+                      <dd>
+                        {p.grades}
+                        <small>{p.ages}</small>
+                      </dd>
+                    </>
+                  </div>
+                  <div>
+                    <>
+                      <dt>When do we meet?</dt>
+                      <dd class="program-schedule">{p.schedule}</dd>
+                    </>
+                  </div>
+                </>
+              </dl>
+              <a class="button" href="#interest">
+                <>
+                  <span>I’m interested</span>
+                  <span aria-hidden="true">↓</span>
+                </>
+              </a>
+            </>
+          </aside>
+        </section>
+      ))
+    }
+  </program-preview>
+
+</section>
+<script>
+  import "./program-preview"
+</script>

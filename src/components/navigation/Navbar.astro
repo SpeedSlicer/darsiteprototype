@@ -1,0 +1,33 @@
+---
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/programs", label: "Programs" },
+  { href: "/about", label: "About DAR" },
+]
+const current = Astro.url.pathname.replace(/\/$/, "") || "/"
+---
+
+<header class="site-header">
+  <a class="wordmark" href="/" aria-label="Downingtown Area Robotics home"
+    ><img class="dar-logo" src="/dar-logo.png" alt="" width="60" height="60" /><span
+      >DOWNINGTOWN AREA<br /><strong>ROBOTICS</strong></span
+    ></a
+  >
+  <nav aria-label="Main navigation">
+    <div class="nav-track">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={current === link.href ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+  <a class="button button-small" href="/join"
+    ><span>Get involved</span><span aria-hidden="true">↗</span></a
+  >
+</header>
