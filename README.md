@@ -24,3 +24,5 @@ Run `npm run dev` locally. Validate with `npm run typecheck` and `npm run build`
 Start with the [documentation index](docs/editing-guide.md). Detailed guides cover [pages](docs/pages.md), [programs](docs/programs.md), [news](docs/news.md), [awards](docs/awards.md), [sponsorship](docs/sponsorship.md), [navigation](docs/navigation.md), [calendar and contact](docs/calendar-and-contact.md), [images and styling](docs/images-and-styling.md), and [publishing](docs/publishing.md).
 
 New contributors can follow [getting started](docs/getting-started.md).
+
+Explore the current routes with the [Obsidian site map](docs/site-map/README.md), including a visual Canvas and linked page notes.

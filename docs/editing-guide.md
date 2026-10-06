@@ -19,6 +19,8 @@ Start here for editing the static DAR website. These linked Markdown guides live
 
 ## Common tasks
 
+For a visual route inventory, open the [Obsidian site map](site-map/README.md). It includes a Canvas and linked notes for pages, navigation, redirects, and external services.
+
 - Change FAQ, joining, or contact text: [edit an existing page](pages.md#edit-an-existing-page).
 - Add a new website page: [use the page template](pages.md#add-a-page).
 - Add a link without editing code: [automatic navigation links](navigation.md#automatic-links-for-new-pages).
