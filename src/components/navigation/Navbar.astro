@@ -1,33 +1,99 @@
 ---
-const links = [
+import { navigationGroups } from "@/data/navigation"
+interface Props { extraLinks?: { href: string; label: string }[] }
+const { extraLinks = [] } = Astro.props
+const groups = extraLinks.length ? [...navigationGroups, { label: "More pages", links: extraLinks }] : navigationGroups
+const current = Astro.url.pathname.replace(/\/$/, "") || "/"
+const primaryLinks = [
   { href: "/", label: "Home" },
   { href: "/programs", label: "Programs" },
+  { href: "/calendar", label: "Calendar" },
   { href: "/about", label: "About DAR" },
+  { href: "/join", label: "Join DAR" },
 ]
-const current = Astro.url.pathname.replace(/\/$/, "") || "/"
 ---
 
-<header class="site-header">
-  <a class="wordmark" href="/" aria-label="Downingtown Area Robotics home"
-    ><img class="dar-logo" src="/dar-logo.png" alt="" width="60" height="60" /><span
-      >DOWNINGTOWN AREA<br /><strong>ROBOTICS</strong></span
-    ></a
-  >
-  <nav aria-label="Main navigation">
-    <div class="nav-track">
-      {
-        links.map((link) => (
-          <a
-            href={link.href}
-            aria-current={current === link.href ? "page" : undefined}
-          >
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
-  </nav>
-  <a class="button button-small" href="/join"
-    ><span>Get involved</span><span aria-hidden="true">↗</span></a
-  >
+<header class="site-navigation" transition:name="site-header" transition:animate="none">
+  <div class="site-header">
+    <a class="wordmark" href="/" aria-label="Downingtown Area Robotics home">
+      <img class="dar-logo" src="/dar-logo.png" alt="" width="60" height="60" />
+      <span>DOWNINGTOWN AREA<br /><strong>ROBOTICS</strong></span>
+    </a>
+    <nav class="main-navigation" aria-label="Main navigation">
+      {primaryLinks.map(link => <a class="primary-link" href={link.href} aria-current={current === link.href ? "page" : undefined}>{link.label}</a>)}
+      <details class="site-menu">
+        <summary>All pages <span class="menu-icon" aria-hidden="true"><span></span><span></span></span></summary>
+        <div class="navigation-panel">
+          <div class="navigation-columns">
+            {groups.map((group, index) => (
+              <section aria-labelledby={`nav-heading-${index}`}>
+                <h2 id={`nav-heading-${index}`}>{group.label}</h2>
+                <ul>
+                  {group.links.map(link => <li><a href={link.href} aria-current={current === link.href ? "page" : undefined}>{link.label}</a></li>)}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </div>
+      </details>
+    </nav>
+  </div>
 </header>
+
+<style>
+  .site-navigation { position: sticky; top: 0; z-index: 100; width: 100%; background: var(--dar-paper); border-bottom: 1px solid #ded9cf; }
+  .site-navigation .site-header { max-width: 1360px; min-height: 84px; margin: 0 auto; padding: 12px 48px; gap: 24px; flex-wrap: nowrap; }
+  .wordmark { flex-shrink: 0; }
+  .main-navigation { display: flex; align-items: center; gap: 2px; }
+  .primary-link, summary { display: flex; align-items: center; gap: 10px; padding: 12px 13px; font-size: 14px; font-weight: 600; white-space: nowrap; transition: color 160ms ease; }
+  .primary-link:hover, summary:hover, .navigation-panel a:hover { color: #a52236; }
+  [aria-current="page"], [open] summary { color: #a52236; }
+  .primary-link[aria-current="page"] { box-shadow: inset 0 -2px #a52236; }
+  summary { cursor: pointer; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  .menu-icon { display: flex; flex-direction: column; gap: 5px; width: 16px; }
+  .menu-icon span { height: 1.5px; width: 100%; background: currentColor; transition: transform 160ms ease; }
+  [open] .menu-icon span:first-child { transform: translateY(3.25px) rotate(45deg); }
+  [open] .menu-icon span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+  .navigation-panel { position: absolute; top: 100%; left: 0; width: 100%; background: var(--dar-paper); border-bottom: 1px solid #ded9cf; box-shadow: 0 14px 20px #202b4010; max-height: calc(100dvh - 160px); overflow-y: auto; animation: panel-enter 160ms ease-out; }
+  .navigation-columns { max-width: 1360px; margin: 0 auto; padding: 28px 48px 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 48px; border-top: 1px solid #ded9cf; }
+  h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 14px; color: #666; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  .navigation-panel a { display: block; padding: 9px 0; font-size: 15px; }
+  .navigation-panel a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid #a52236; outline-offset: 3px; }
+  @keyframes panel-enter { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 1100px) {
+    .site-navigation .site-header { flex-wrap: wrap; padding: 12px 24px; gap: 8px; }
+    .site-navigation .main-navigation { order: 2; width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+    .navigation-columns { padding: 24px; }
+  }
+  @media (max-width: 600px) {
+    .site-navigation .site-header { padding: 10px 22px; }
+    .wordmark .dar-logo { width: 34px; height: 34px; }
+    .primary-link, summary { padding: 9px 8px; font-size: 12px; }
+    .main-navigation { gap: 0; }
+    .navigation-columns { padding: 22px; gap: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .navigation-panel a { font-size: 14px; }
+  }
+  @media (max-width: 360px) { .navigation-columns { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .navigation-panel { animation: none; } }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const menu = document.querySelector<HTMLDetailsElement>(".site-menu")
+    if (!menu) return
+    menu.addEventListener("keydown", event => {
+      if (event.key === "Escape") { menu.open = false; menu.querySelector("summary")?.focus() }
+    })
+    document.querySelectorAll(".main-navigation a").forEach(link => {
+      link.addEventListener("click", () => { menu.open = false })
+    })
+  })
+  document.addEventListener("click", event => {
+    const header = document.querySelector(".site-navigation")
+    const menu = document.querySelector<HTMLDetailsElement>(".site-menu")
+    if (menu && event.target instanceof Node && !header?.contains(event.target)) menu.open = false
+  })
+</script>

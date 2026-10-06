@@ -1,0 +1,1 @@
+Vendored from https://github.com/ErikBoesen/banners.css (master), retrieved 2026-10-05. MIT license retained in LICENSE. Removed the Adam font reference and use the site font to avoid an additional font asset. Banner size and text layout are overridden in src/pages/awards.astro. FIRST logo is from the same repository.

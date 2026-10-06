@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/main.astro"
+import { Content as Introduction } from "@/content/awards/intro.md"
+import snapshot from "@/data/awards.json"
+
+const programs = [
+  { id: "frc", label: "FRC", name: "FIRST Robotics Competition · Team 1640", underConstruction: false },
+  { id: "fll", label: "FLL", name: "FIRST LEGO League", underConstruction: true },
+  { id: "ftc", label: "FTC", name: "FIRST Tech Challenge", underConstruction: true },
+]
+---
+
+<Layout title="Awards & achievements" description="Competition awards for DAR’s robotics teams.">
+  <link slot="head" rel="stylesheet" href="/vendor/banners/banners.css" />
+  <header class="page-heading">
+    <p class="eyebrow">TEAM ACHIEVEMENTS</p>
+    <h1>Awards & achievements</h1>
+  </header>
+  <div class="prose"><Introduction />
+    <nav aria-label="Award programs" class="award-jumps">
+      {programs.map(program => <a href={`#${program.id}`}>{program.label}</a>)}
+    </nav>
+  </div>
+  <div class="awards-sections">
+    {programs.map(program => {
+      const awards = snapshot.awards.filter(award => award.program === program.id)
+        .sort((a, b) => b.year - a.year || a.event.localeCompare(b.event))
+      const banners = awards.filter(award => award.blueBanner)
+      const otherAwards = awards.filter(award => !award.blueBanner)
+      return (
+        <section id={program.id} aria-labelledby={`${program.id}-title`}>
+          <p class="eyebrow">{program.name}</p>
+          <h2 id={`${program.id}-title`}>{program.label} awards</h2>
+          {program.underConstruction ? (
+            <p><strong>Under construction.</strong> We’re compiling this program’s award history.</p>
+          ) : (
+            <>
+              {banners.length > 0 && <>
+                <h3>Blue banners</h3>
+                <ul class="banners" aria-label={`${program.label} blue-banner awards`}>
+                  {banners.map(award => (
+                    <li>
+                      <img src="/vendor/banners/first.svg" alt="FIRST" width="75" height="45" loading="lazy" />
+                      <span class="banner-year">{award.year}</span>
+                      <strong>{award.award}</strong>
+                      <span class="banner-team">Team {award.team}</span>
+                      <a href={award.source}>{award.event}</a>
+                    </li>
+                  ))}
+                </ul>
+              </>}
+              {otherAwards.length > 0 && <details>
+                <summary>More awards ({otherAwards.length})</summary>
+                <ul class="other-awards">
+                  {otherAwards.map(award => <li><strong>{award.year} · {award.award}</strong><br />Team {award.team} · <a href={award.source}>{award.event}</a></li>)}
+                </ul>
+              </details>}
+            </>
+          )}
+          <p><a href={`/${program.id}`}>{program.label} program ↗</a></p>
+        </section>
+      )
+    })}
+    <p class="snapshot-note">Award records saved {snapshot.retrievedOn}. FRC records cover {snapshot.yearsImported[0]}–{snapshot.yearsImported.at(-1)}; earlier results are not included. <a href="https://frc-events.firstinspires.org/team/1640">View Team 1640 on FIRST</a>.</p>
+  </div>
+</Layout>
+
+<style>
+  .awards-sections { max-width: 1000px; margin: 0 auto 70px; }
+  .awards-sections section { margin-bottom: 64px; scroll-margin-top: 100px; }
+  h2 { font-size: clamp(30px, 5vw, 44px); margin: 8px 0 24px; }
+  h3 { font-size: 22px; margin: 20px 0; }
+  p { line-height: 1.8; margin: 20px 0; }
+  a { text-decoration: underline; text-underline-offset: 4px; }
+  .award-jumps { display: flex; gap: 28px; }
+  .banners { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; list-style: none; padding: 0; margin: 28px 0 50px; }
+  .banners li { width: 100%; margin: 0 0 30px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .banners li:after { border: 0; background: #0f4bcb; width: 100%; height: 26px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 25%, 0 100%); }
+  .banners li img { width: 75px; height: 45px; margin: 0; }
+  .banner-year { font-size: 28px; font-weight: 700; }
+  .banners strong { font-size: 17px; line-height: 1.4; }
+  .banner-team, .banners a { font-size: 13px; line-height: 1.5; }
+  .banners a { color: white; margin-top: auto; }
+  summary { cursor: pointer; font-weight: 600; padding: 12px 0; }
+  .other-awards { padding-left: 24px; list-style: disc; }
+  .other-awards li { margin: 20px 0; line-height: 1.7; }
+  .snapshot-note { font-size: 13px; color: #565d4d; }
+</style>

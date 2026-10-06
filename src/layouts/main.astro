@@ -2,20 +2,40 @@
 import "@/styles/global.css"
 import "@fontsource-variable/geist"
 import { ClientRouter } from "astro:transitions"
-import { slide } from "astro:transitions"
 import Navbar from "@/components/navigation/Navbar.astro"
+import { footerLinks } from "@/data/navigation"
+import type { MarkdownInstance } from "astro"
+interface PageMetadata {
+  title: string
+  morePages?: boolean
+  navLabel?: string
+  navOrder?: number
+}
+const pages = import.meta.glob<MarkdownInstance<PageMetadata>>("../pages/**/*.md", { eager: true })
+const extraLinks = Object.values(pages)
+  .filter(page => page.frontmatter.morePages === true && page.url &&
+    !footerLinks.some(link => link.href === page.url?.replace(/\/$/, "")))
+  .sort((a, b) => (a.frontmatter.navOrder ?? 100) - (b.frontmatter.navOrder ?? 100) ||
+    (a.frontmatter.navLabel ?? a.frontmatter.title).localeCompare(b.frontmatter.navLabel ?? b.frontmatter.title))
+  .map(page => ({ href: page.url!, label: page.frontmatter.navLabel ?? page.frontmatter.title }))
+const moreLinks = [...footerLinks, ...extraLinks]
+const animation = (name: string) => ({ name, duration: "380ms", easing: "cubic-bezier(0.22, 0.61, 0.36, 1)", fillMode: "both" as const })
+const pageTransition = {
+  forwards: { old: animation("dar-page-out-left"), new: animation("dar-page-in-right") },
+  backwards: { old: animation("dar-page-out-right"), new: animation("dar-page-in-left") },
+}
 interface Props {
   title?: string
   description?: string
 }
 const {
-  title = "Build something bigger.",
-  description = "Build robots, learn together, and find your people at Downingtown Area Robotics.",
+  title = "Downingtown Area Robotics",
+  description = "Student robotics programs at Downingtown Area Robotics in Exton, Pennsylvania.",
 } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head
     ><ClientRouter /><meta charset="utf-8" /><meta
       name="viewport"
@@ -24,25 +44,34 @@ const {
       rel="icon"
       type="image/png"
       href="/dar-logo.png"
-    /><title>{title} | Downingtown Area Robotics</title></head
+    /><title>{title} | Downingtown Area Robotics</title><slot name="head" /></head
   >
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <Navbar extraLinks={extraLinks} />
     <div class="site-shell">
-      <Navbar /><main
+      <main
         id="main"
         transition:name="page"
-        transition:animate={slide({ duration: "380ms" })}
+        transition:animate={pageTransition}
       >
         <slot />
       </main>
-      <footer>
+      <nav class="footer-navigation" aria-label="More DAR pages" transition:name="site-footer-navigation" transition:animate="none">
+        {moreLinks.map(link => <a href={link.href}>{link.label}</a>)}
+      </nav>
+      <footer transition:name="site-footer" transition:animate="none">
         <a class="footer-brand" href="/">DAR</a><p>
 
         </p><a class="text-link" href="mailto:info@darobotics.org"
-          >Say hello <span aria-hidden="true">↗</span></a
+          >Contact DAR <span aria-hidden="true">↗</span></a
         >
       </footer>
     </div>
   </body>
 </html>
+
+<style>
+  .footer-navigation { display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px 0; border-top: 1px solid #c9cbc0; }
+  .footer-navigation a { text-decoration: underline; text-underline-offset: 4px; }
+</style>

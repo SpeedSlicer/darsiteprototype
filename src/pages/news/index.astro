@@ -1,0 +1,20 @@
+---
+import type { MarkdownInstance } from "astro"
+import Layout from "@/layouts/main.astro"
+interface Article { title: string; description: string; date: string }
+const files = import.meta.glob<MarkdownInstance<Article>>("./*.md", { eager: true })
+const articles = Object.values(files).sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date))
+---
+
+<Layout title="News" description="Stories and updates from Downingtown Area Robotics.">
+  <header class="page-heading"><p class="eyebrow">DAR NEWS</p><h1>DAR news</h1><p>Stories and updates from our teams.</p></header>
+  <section class="prose" aria-label="News articles">
+    {articles.map(({ frontmatter: article, url }) => (
+      <article>
+        <h2><a href={url}>{article.title}</a></h2>
+        <time datetime={article.date}>{new Date(`${article.date}T12:00:00Z`).toLocaleDateString("en-US", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric" })}</time>
+        <p>{article.description}</p>
+      </article>
+    ))}
+  </section>
+</Layout>

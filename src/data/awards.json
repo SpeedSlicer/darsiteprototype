@@ -1,0 +1,554 @@
+{
+  "retrievedOn": "2026-10-05",
+  "sourceMethod": "One-time retrieval of public FIRST team award tables; authenticated API not used.",
+  "team": "1640",
+  "yearsImported": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "awards": [
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2026,
+      "award": "Quality Award",
+      "event": "FIRST Championship - FIRST Robotics Competition - Milstein Division presented by Qualcomm Incorporated",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2026/MILSTEIN",
+      "recordSource": "https://frc-events.firstinspires.org/2026/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2026,
+      "award": "Excellence in Engineering Award sponsored by Littelfuse",
+      "event": "FIRST Mid-Atlantic District Championship",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2026/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2026/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2026,
+      "award": "Quality Award",
+      "event": "FMA District Bensalem Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2026/PABEN",
+      "recordSource": "https://frc-events.firstinspires.org/2026/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2026,
+      "award": "Innovation in Control Award sponsored by nVent",
+      "event": "FMA District Seneca Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2026/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2026/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2025,
+      "award": "Innovation in Control Award sponsored by nVent",
+      "event": "FIRST Championship - FIRST Robotics Competition - Milstein Division",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2025/MILSTEIN",
+      "recordSource": "https://frc-events.firstinspires.org/2025/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2025,
+      "award": "Innovation in Control Award sponsored by nVent",
+      "event": "FIRST Mid-Atlantic District Championship",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2025/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2025/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2025,
+      "award": "Innovation in Control Award sponsored by nVent",
+      "event": "FMA District Seneca Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2025/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2025/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2025,
+      "award": "Excellence in Engineering Award",
+      "event": "FMA District Warren Hills Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2025/NJWAS",
+      "recordSource": "https://frc-events.firstinspires.org/2025/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2024,
+      "award": "Autonomous Award",
+      "event": "FIRST Championship - FIRST Robotics Competition - Curie Division sponsored by Rockwell Automation",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2024/CURIE",
+      "recordSource": "https://frc-events.firstinspires.org/2024/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2024,
+      "award": "District Championship Winner",
+      "event": "FIRST Mid-Atlantic District Championship",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2024/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2024/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2024,
+      "award": "District FIRST Impact Award",
+      "event": "FMA District Bensalem Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2024/PABEN",
+      "recordSource": "https://frc-events.firstinspires.org/2024/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2024,
+      "award": "Innovation in Control Award",
+      "event": "FMA District Seneca Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2024/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2024/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2023,
+      "award": "District Engineering Inspiration Award",
+      "event": "FMA District Hatboro-Horsham Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2023/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2023/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2023,
+      "award": "Innovation in Control Award",
+      "event": "FMA District Springside Chestnut Hill Academy Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2023/PAPHI",
+      "recordSource": "https://frc-events.firstinspires.org/2023/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2022,
+      "award": "District Event Finalist",
+      "event": "FMA District Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2022/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2022/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2022,
+      "award": "Industrial Design Award sponsored by General Motors",
+      "event": "FMA District Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2022/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2022/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2022,
+      "award": "District Event Winner",
+      "event": "FMA District Springside Chestnut Hill Academy Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2022/PAPHI",
+      "recordSource": "https://frc-events.firstinspires.org/2022/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2022,
+      "award": "Industrial Design Award sponsored by General Motors",
+      "event": "FMA District Springside Chestnut Hill Academy Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2022/PAPHI",
+      "recordSource": "https://frc-events.firstinspires.org/2022/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2021,
+      "award": "Excellence in Engineering Award",
+      "event": "Ruthenium Group - INFINITE RECHARGE At Home Challenge",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2021/IRHRU",
+      "recordSource": "https://frc-events.firstinspires.org/2021/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2020,
+      "award": "District Chairman's Award",
+      "event": "* FMA District Springside Chestnut Hill Academy Event (Cancelled)",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2020/PAPHI",
+      "recordSource": "https://frc-events.firstinspires.org/2020/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2020,
+      "award": "Quality Award sponsored by Motorola Solutions Foundation",
+      "event": "FMA District Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2020/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2020/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2019,
+      "award": "Regional Chairman's Award",
+      "event": "FIRST Mid-Atlantic District Championship",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2019/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2019/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2019,
+      "award": "Excellence in Engineering Award sponsored by Delphi",
+      "event": "FMA District Bensalem Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2019/PABEN",
+      "recordSource": "https://frc-events.firstinspires.org/2019/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2019,
+      "award": "District Event Winner",
+      "event": "FMA District Seneca Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2019/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2019/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2019,
+      "award": "District Chairman's Award",
+      "event": "FMA District Westtown Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2019/PAWCH",
+      "recordSource": "https://frc-events.firstinspires.org/2019/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2019,
+      "award": "District Event Winner",
+      "event": "FMA District Westtown Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2019/PAWCH",
+      "recordSource": "https://frc-events.firstinspires.org/2019/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "Championship Subdivision Finalist",
+      "event": "FIRST Championship - Detroit - Carson Subdivision",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2018/CARSON",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "Excellence in Engineering Award sponsored by Delphi",
+      "event": "FIRST Championship - Detroit - Carson Subdivision",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2018/CARSON",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "District Championship Finalist",
+      "event": "FIRST Mid-Atlantic District Championship",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2018/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "Industrial Design Award sponsored by General Motors",
+      "event": "FIRST Mid-Atlantic District Championship",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2018/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "District Chairman's Award",
+      "event": "MAR District Hatboro-Horsham Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2018/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "District Event Finalist",
+      "event": "MAR District Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2018/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "District Event Winner",
+      "event": "MAR District Seneca Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2018/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2018,
+      "award": "Creativity Award sponsored by Xerox",
+      "event": "MAR District Westtown Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2018/PAWCH",
+      "recordSource": "https://frc-events.firstinspires.org/2018/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2017,
+      "award": "Championship Subdivision Winner",
+      "event": "FIRST Championship - St. Louis - Archimedes Subdivision",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2017/ARCHIMEDES",
+      "recordSource": "https://frc-events.firstinspires.org/2017/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2017,
+      "award": "FIRST Dean's List Finalist Award",
+      "event": "FIRST Mid-Atlantic District Championship sponsored by Johnson & Johnson",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2017/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2017/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2017,
+      "award": "Innovation in Control Award sponsored by Rockwell Automation",
+      "event": "FIRST Mid-Atlantic District Championship sponsored by Johnson & Johnson",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2017/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2017/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2017,
+      "award": "District Engineering Inspiration Award",
+      "event": "MAR District - Seneca Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2017/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2017/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2017,
+      "award": "Innovation in Control Award sponsored by Rockwell Automation",
+      "event": "MAR District - Westtown Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2017/PAWCH",
+      "recordSource": "https://frc-events.firstinspires.org/2017/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "Innovation in Control Award sponsored by Rockwell Automation",
+      "event": "MAR District - Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2016/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "District Championship Points Qualifying Team",
+      "event": "MAR District - Montgomery Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2016/NJSKI",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "District Event Finalist",
+      "event": "MAR District - Seneca Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2016/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "Industrial Design Award sponsored by General Motors",
+      "event": "MAR District - Seneca Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2016/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "District Event Winner",
+      "event": "MAR District - Westtown Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2016/PAWCH",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "Quality Award sponsored by Motorola Solutions Foundation",
+      "event": "MAR District - Westtown Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2016/PAWCH",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2016,
+      "award": "FIRST Championship District Points Qualifying Team",
+      "event": "Mid-Atlantic Robotics District Championship",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2016/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2016/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2015,
+      "award": "Championship Subdivision Finalist",
+      "event": "FIRST Championship - Archimedes Subdivision",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2015/ARCHIMEDES",
+      "recordSource": "https://frc-events.firstinspires.org/2015/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2015,
+      "award": "District Event Finalist",
+      "event": "MAR District - Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2015/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2015/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2015,
+      "award": "Quality Award sponsored by Motorola",
+      "event": "MAR District - Hatboro-Horsham Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2015/PAHAT",
+      "recordSource": "https://frc-events.firstinspires.org/2015/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2015,
+      "award": "District Event Winner",
+      "event": "MAR District - Seneca Event",
+      "blueBanner": true,
+      "source": "https://frc-events.firstinspires.org/2015/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2015/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2015,
+      "award": "Quality Award sponsored by Motorola",
+      "event": "MAR District - Seneca Event",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2015/NJTAB",
+      "recordSource": "https://frc-events.firstinspires.org/2015/team/1640"
+    },
+    {
+      "program": "frc",
+      "team": "1640",
+      "year": 2015,
+      "award": "District Championship Finalist",
+      "event": "Mid-Atlantic Robotics District Championship",
+      "blueBanner": false,
+      "source": "https://frc-events.firstinspires.org/2015/MRCMP",
+      "recordSource": "https://frc-events.firstinspires.org/2015/team/1640"
+    },
+    {
+      "program": "ftc",
+      "team": "21727",
+      "year": 2024,
+      "award": "Judges' Choice Award",
+      "event": "Red Raiders Qualifier",
+      "blueBanner": false,
+      "source": "https://ftc-events.firstinspires.org/2024/USPACOQ2",
+      "recordSource": "https://ftc-events.firstinspires.org/2024/team/21727"
+    }
+  ],
+  "ftcTeamsImported": [
+    "21727"
+  ]
+}

@@ -1,18 +1,18 @@
 ---
 layout: ../layouts/markdown.astro
-title: More than robots.
-description: A community of curious minds, learning by doing.
+title: About Downingtown Area Robotics
+description: Volunteer-run student robotics programs in Chester County, Pennsylvania.
 eyebrow: About DAR
 ---
 
-## A place to find your people
+## Who we are
 
-Downingtown Area Robotics a volunteer-run nonprofit based here, in Chester County, PA. We bring students together through FIRST robotics, and bring real-world skills to students here.
-## Every talent belongs
+Downingtown Area Robotics is a volunteer-run nonprofit in Chester County, Pennsylvania. Students learn engineering, programming, and teamwork through FIRST robotics.
+## What students learn
 
-Building a team takes more than building a robot. Design, programming, mechanical, outreach, and more. Come and explore, and find out what you enjoy!
+Students contribute to design, programming, mechanical systems, and outreach. Our teams offer opportunities to learn technical and organizational skills.
 
-## Talk to us!
+## Contact DAR
 
 Want to learn more? [Explore our programs](/programs) or [get involved](/join).
 

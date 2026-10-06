@@ -2,7 +2,7 @@
 import Interest from "@/components/programs/Interest.astro"
 import Layout from "./main.astro"
 interface Props {
-  frontmatter: { title: string; description?: string; eyebrow?: string }
+  frontmatter: { title: string; description?: string; eyebrow?: string; showInterest?: boolean; date?: string }
 }
 const { frontmatter } = Astro.props
 ---
@@ -15,6 +15,9 @@ const { frontmatter } = Astro.props
       frontmatter.description && <p>{frontmatter.description}</p>
     }
   </header>
-  <article class="prose"><slot /></article>
-  <Interest />
+  <article class="prose">
+    {frontmatter.date && <p><time datetime={frontmatter.date}>{new Date(`${frontmatter.date}T12:00:00Z`).toLocaleDateString("en-US", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric" })}</time></p>}
+    <slot />
+  </article>
+  {frontmatter.showInterest !== false && <Interest />}
 </Layout>

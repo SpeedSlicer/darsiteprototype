@@ -1,0 +1,32 @@
+---
+import type { MarkdownInstance } from "astro"
+import Layout from "@/layouts/main.astro"
+import Interest from "@/components/programs/Interest.astro"
+interface Program {
+  id: string; title: string; tagline: string; grades: string; ages: string;
+  schedule: string; photo: string; photoAlt: string; firstUrl: string
+}
+export function getStaticPaths() {
+  const files = import.meta.glob<MarkdownInstance<Program>>("../content/programs/*.md", { eager: true })
+  return Object.values(files).map(program => ({ params: { program: program.frontmatter.id }, props: { program } }))
+}
+const { program } = Astro.props
+const { frontmatter: p, Content } = program
+---
+
+<Layout title={p.title} description={p.tagline}>
+  <header class="page-heading">
+    <p class="eyebrow">OUR PROGRAMS</p>
+    <h1>{p.title}</h1><p>{p.tagline}</p>
+  </header>
+  <article class="prose">
+    {p.photo && <img src={p.photo} alt={p.photoAlt} width="1000" height="667" />}
+    <Content />
+    <h2>At a glance</h2>
+    <p>{p.grades} · {p.ages}</p>
+    <p>{p.schedule}</p>
+    <p>Contact DAR for current openings, fees, and team placement.</p>
+    <p><a href={p.firstUrl}>Learn more at FIRST</a> · <a href="/programs">All programs</a> · <a href="/calendar">Event calendar</a></p>
+  </article>
+  <Interest />
+</Layout>
